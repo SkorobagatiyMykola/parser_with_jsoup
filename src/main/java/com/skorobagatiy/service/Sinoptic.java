@@ -8,7 +8,8 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 public class Sinoptic {
-    private static String url = "https://ua.sinoptik.ua/";
+    private static final String url = "https://ua.sinoptik.ua/";
+    public static final String ANSI_YELLOW = "\u001B[33m";
 
     public static void main(String[] args) {
         //System.out.println(getPage());
@@ -19,11 +20,14 @@ public class Sinoptic {
         Document page = getPage();
         //Element tabl = page.select("div.tabs").first();
         Element tabl = page.select("#blockDays").first();
-        System.out.println(tabl);
-        Elements date = tabl.select(".date ");
+
+        //Elements date = tabl.select(".date ");
+
+        Elements date = tabl.select(".main ");
+
+        printDate(date);
 
 
-    //    Elements date2 = tabl.select("p[class=date ]");
         Elements months = tabl.select(".month");
         Elements months2 = tabl.select("p[month]");
         Elements temperature = tabl.select(".temperature");
@@ -52,6 +56,18 @@ public class Sinoptic {
         }
 
         return page;
+    }
+
+    private static void printDate(Elements list){
+
+        for (Element el: list) {
+            String day_week = el.select(".day-link").text();
+            System.out.println(day_week);
+            String date_number = el.select(".date ").text();
+            //System.out.println(date_number);
+
+        }
 
     }
+
 }
