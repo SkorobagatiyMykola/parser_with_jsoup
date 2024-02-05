@@ -39,7 +39,8 @@ public class Sinoptic {
     }
 
     private static void printDate(Elements list) {
-        String dateMainFormat = "%s %s (%s) %s, температура %s %s";
+        String dateMainFormat = "%s %s, %-10s - %-45s; температура %s %s";
+        String dateMainFormat2 = "%s %s, %-19s - %-45s; температура %s %s";
 
         for (Element el : list) {
 
@@ -47,9 +48,13 @@ public class Sinoptic {
             String dayMonth = el.select(".month ").text();
             String dayWeek;
 
-            if (el.select("p.date.dateFree").hasText())
+            boolean dateFree = el.select("p.date.dateFree").hasText();
+
+            if (dateFree) {
                 dayWeek = ANSI_RED + el.select(".day-link").text() + ANSI_RESET;
-            else
+               // System.out.println(dayWeek.length());
+
+            } else
                 dayWeek = el.select(".day-link").text();
 
             String weather = el.select(".weatherIco ").attr("title").toString();
@@ -60,7 +65,9 @@ public class Sinoptic {
             String minTemp = min.select("span").text();
             String maxTemp = max.select("span").text();
 
-            String line = String.format(dateMainFormat, dayNumber, dayMonth, dayWeek, weather, minTemp, maxTemp);
+            //String line = String.format(dateMainFormat, dayNumber, dayMonth, dayWeek, weather, minTemp, maxTemp);
+            String line = dateFree ? String.format(dateMainFormat2, dayNumber, dayMonth, dayWeek, weather, minTemp, maxTemp) :
+                    String.format(dateMainFormat, dayNumber, dayMonth, dayWeek, weather, minTemp, maxTemp) ;
             System.out.println(line);
         }
 
