@@ -1,0 +1,3 @@
+How to test stmp settings (for send email):
+https://www.gmass.co/smtp-test
+https://smtpserver.com/smtptest
