@@ -18,6 +18,7 @@ public class SendUkrNet {
     private static String smtpPort = "2525"; // 2525 - ok
 
     public static void main(String[] args) throws Exception {
+
         System.out.println("Seng email from ukr.net");
 
         Properties properties = new Properties();

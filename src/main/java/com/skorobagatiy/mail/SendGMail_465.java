@@ -15,6 +15,7 @@ public class SendGMail_465 {
     private static String to = "nick1980457@gmail.com";
     private static String host = "smtp.gmail.com";
     private static String password = "password";
+
     private static String smtpPort = "465";
 
     public static void main(String[] args) throws Exception {
