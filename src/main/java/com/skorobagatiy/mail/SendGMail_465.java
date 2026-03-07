@@ -19,6 +19,7 @@ public class SendGMail_465 {
     private static String smtpPort = "465";
 
     public static void main(String[] args) throws Exception {
+
         System.out.println("Seng email from ukr.net");
 
         Properties properties = new Properties();
