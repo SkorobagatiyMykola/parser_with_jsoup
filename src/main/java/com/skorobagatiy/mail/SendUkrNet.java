@@ -19,6 +19,7 @@ public class SendUkrNet {
 
     public static void main(String[] args) throws Exception {
 
+
         System.out.println("Seng email from ukr.net");
 
         Properties properties = new Properties();
