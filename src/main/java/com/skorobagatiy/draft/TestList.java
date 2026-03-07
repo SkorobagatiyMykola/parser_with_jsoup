@@ -9,6 +9,7 @@ public class TestList {
     private final static String[] arrayFactorialStr = new String[30];
 
     static {
+
         arrayFactorialStr[1] = "one";
         arrayFactorialStr[3] = "three";
         arrayFactorialStr[5] = "five";
