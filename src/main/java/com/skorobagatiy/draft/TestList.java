@@ -11,6 +11,7 @@ public class TestList {
     static {
 
         arrayFactorialStr[1] = "one";
+        arrayFactorialStr[4] = "one";
         arrayFactorialStr[3] = "three";
         arrayFactorialStr[5] = "five";
     }
