@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TestList {
 
-    private final static String[] arrayFactorialStr = new String[30];
+    private final static String[] arrayFactorialStr = new String[30]; //
 
     static {
 
